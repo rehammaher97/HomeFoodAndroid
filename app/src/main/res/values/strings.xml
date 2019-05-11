@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">HomeFood</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="account_name">Reham</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="deal_desc">deal description</string>
+    <string name="chickens">chickens</string>
+    <string name="burger">burger</string>
+    <string name="pizza">pizza</string>
+    <string name="pic_one">a_1</string>
+    <string name="pic_two">a_2</string>
+    <string name="pic_three">a_3</string>
+    <string name="pic_four">a_4</string>
+    <string name="search_title">choose your region to get meals near you</string>
+</resources>
