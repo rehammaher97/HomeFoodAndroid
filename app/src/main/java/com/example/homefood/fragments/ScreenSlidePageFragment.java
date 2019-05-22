@@ -45,8 +45,24 @@ public class ScreenSlidePageFragment extends Fragment {
             imageView.setImageDrawable(getResources().getDrawable(R.drawable.a_2));
         }else if(mPhotoName.equalsIgnoreCase(getString(R.string.pic_three))){
             imageView.setImageDrawable(getResources().getDrawable(R.drawable.a_3));
-        }else{
+        }else if(mPhotoName.equalsIgnoreCase(getString(R.string.pic_four))){
             imageView.setImageDrawable(getResources().getDrawable(R.drawable.a_4));
+        }else if(mPhotoName.equalsIgnoreCase(getString(R.string.pic_b_one))){
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.b_1));
+        }else if(mPhotoName.equalsIgnoreCase(getString(R.string.pic_b_two))){
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.b_2));
+        }else if(mPhotoName.equalsIgnoreCase(getString(R.string.pic_b_three))){
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.b_3));
+        }else if(mPhotoName.equalsIgnoreCase(getString(R.string.pic_b_four))){
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.b_4));
+        }else if(mPhotoName.equalsIgnoreCase(getString(R.string.pic_b_five))){
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.b_5));
+        }else if(mPhotoName.equalsIgnoreCase(getString(R.string.pic_b_six))){
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.b_6));
+        }else if(mPhotoName.equalsIgnoreCase(getString(R.string.pic_b_seven))){
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.b_7));
+        }else{
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.b_8));
         }
 
         return rootView;

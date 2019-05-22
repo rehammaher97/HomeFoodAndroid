@@ -19,5 +19,16 @@
     <string name="pic_two">a_2</string>
     <string name="pic_three">a_3</string>
     <string name="pic_four">a_4</string>
+
+    <string name="pic_b_one">b_1</string>
+    <string name="pic_b_two">b_2</string>
+    <string name="pic_b_three">b_3</string>
+    <string name="pic_b_four">b_4</string>
+    <string name="pic_b_five">b_5</string>
+    <string name="pic_b_six">b_6</string>
+    <string name="pic_b_seven">b_7</string>
+    <string name="pic_b_eight">b_8</string>
+
+
     <string name="search_title">choose your region to get meals near you</string>
 </resources>

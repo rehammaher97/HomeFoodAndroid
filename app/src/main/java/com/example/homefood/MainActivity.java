@@ -3,9 +3,6 @@ package com.example.homefood;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -24,7 +21,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.homefood.fragments.ScreenSlidePageFragment;
+import com.example.homefood.adapters.BestDealsPagerAdapter;
+import com.example.homefood.adapters.TrendingPageAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,18 +33,9 @@ public class MainActivity extends AppCompatActivity
     /**
      * The number of pages (wizard steps) to show in this demo.
      */
-    private static final int NUM_PAGES = 4;
+    private static final int BEST_DEALS_NUM_PAGES = 4;
+    private static final int TRENDING_NUM_PAGES = 8;
 
-    /**
-     * The pager widget, which handles animation and allows swiping horizontally to access previous
-     * and next wizard steps.
-     */
-    private ViewPager mPager;
-
-    /**
-     * The pager adapter, which provides the pages to the view pager widget.
-     */
-    private PagerAdapter pagerAdapter;
     private Spinner foodSpinner;
     private Spinner citySpinner;
     private Spinner regionSpinner;
@@ -79,9 +68,13 @@ public class MainActivity extends AppCompatActivity
 
 
         // Instantiate a ViewPager and a PagerAdapter.
-        mPager = (ViewPager) findViewById(R.id.deals_view_pager);
-        pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+        ViewPager mPager = (ViewPager) findViewById(R.id.deals_view_pager);
+        PagerAdapter pagerAdapter = new BestDealsPagerAdapter(getSupportFragmentManager(),this, BEST_DEALS_NUM_PAGES);
         mPager.setAdapter(pagerAdapter);
+
+        ViewPager trendingViewPager = (ViewPager) findViewById(R.id.trends_view_pager);
+        PagerAdapter tendingAdapter = new TrendingPageAdapter(getSupportFragmentManager(),this, TRENDING_NUM_PAGES);
+        trendingViewPager.setAdapter(tendingAdapter);
 
         initializeSpinners();
         initializeSearchButton();
@@ -246,28 +239,5 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
-        public ScreenSlidePagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
 
-        @Override
-        public Fragment getItem(int position) {
-            if(position == 0){
-                return ScreenSlidePageFragment.newInstance(getString(R.string.pic_one));
-            }else if(position == 1){
-                return ScreenSlidePageFragment.newInstance(getString(R.string.pic_two));
-            }else if(position == 2){
-                return ScreenSlidePageFragment.newInstance(getString(R.string.pic_three));
-            }else{
-                return ScreenSlidePageFragment.newInstance(getString(R.string.pic_four));
-            }
-
-        }
-
-        @Override
-        public int getCount() {
-            return NUM_PAGES;
-        }
-    }
 }
