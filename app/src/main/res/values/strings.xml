@@ -31,4 +31,7 @@
 
 
     <string name="search_title">choose your region to get meals near you</string>
+    <string name="title_activity_delivery_rating">DeliveryRatingActivity</string>
+    <string name="kitchen_desc">Kitchen Description</string>
+    <string name="kitchen_name">kitchen_name</string>
 </resources>

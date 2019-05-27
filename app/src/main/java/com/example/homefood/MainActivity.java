@@ -1,10 +1,12 @@
 package com.example.homefood;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity
      */
     private static final int BEST_DEALS_NUM_PAGES = 4;
     private static final int TRENDING_NUM_PAGES = 8;
+    private static final String TAG = "MainActivity";
 
     private Spinner foodSpinner;
     private Spinner citySpinner;
@@ -224,20 +227,14 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
+        if (id == R.id.nav_kitchens) {
+            Log.d(TAG, "onNavigationItemSelected: nav_kitchens");
+            Intent intent = new Intent(this, KitchensActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
 }
