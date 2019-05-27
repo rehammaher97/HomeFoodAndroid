@@ -2,6 +2,7 @@ package com.example.homefood;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.PagerAdapter;
@@ -43,6 +44,24 @@ public class MainActivity extends AppCompatActivity
     private Spinner citySpinner;
     private Spinner regionSpinner;
 
+    ViewPager trendingViewPager;
+    PagerAdapter tendingAdapter;
+    int page = 0;
+    private Handler handler;
+    private int delay = 2000; //milliseconds
+
+    Runnable runnable = new Runnable() {
+        public void run() {
+            if (tendingAdapter.getCount() == page) {
+                page = 0;
+            } else {
+                page++;
+            }
+            trendingViewPager.setCurrentItem(page, true);
+            handler.postDelayed(this, delay);
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,13 +94,27 @@ public class MainActivity extends AppCompatActivity
         PagerAdapter pagerAdapter = new BestDealsPagerAdapter(getSupportFragmentManager(),this, BEST_DEALS_NUM_PAGES);
         mPager.setAdapter(pagerAdapter);
 
-        ViewPager trendingViewPager = (ViewPager) findViewById(R.id.trends_view_pager);
-        PagerAdapter tendingAdapter = new TrendingPageAdapter(getSupportFragmentManager(),this, TRENDING_NUM_PAGES);
+        trendingViewPager = (ViewPager) findViewById(R.id.trends_view_pager);
+        tendingAdapter = new TrendingPageAdapter(getSupportFragmentManager(),this, TRENDING_NUM_PAGES);
         trendingViewPager.setAdapter(tendingAdapter);
 
         initializeSpinners();
         initializeSearchButton();
 
+        handler = new Handler();
+
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        handler.postDelayed(runnable, delay);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        handler.removeCallbacks(runnable);
     }
 
     private void initializeSearchButton() {

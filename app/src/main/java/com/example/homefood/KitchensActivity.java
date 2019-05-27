@@ -13,7 +13,7 @@ public class KitchensActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kitchens);
 
-        String[] kitchenNames ={"Om Ahmed","El Haga Zenaib", "Om‌ Hassan","Om Ali"};
+        String[] kitchenNames ={"Nona Kitchen","El Haga Zenaib Kitchen", "Gana Kitchen","Sophia Kitchen"};
 
         Integer[] imgid={
                 R.drawable.k_1,R.drawable.k_2,
