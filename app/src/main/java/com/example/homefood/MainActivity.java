@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -263,6 +264,9 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_kitchens) {
             Log.d(TAG, "onNavigationItemSelected: nav_kitchens");
             Intent intent = new Intent(this, KitchensActivity.class);
+            startActivity(intent);
+        } else if(id == R.id.nav_track_order){
+            Intent intent = new Intent(this, DeliveryActivity.class);
             startActivity(intent);
         }
 

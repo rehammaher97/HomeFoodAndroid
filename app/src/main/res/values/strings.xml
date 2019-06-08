@@ -34,4 +34,8 @@
     <string name="title_activity_delivery_rating">DeliveryRatingActivity</string>
     <string name="kitchen_desc">Kitchen Description</string>
     <string name="kitchen_name">kitchen_name</string>
+    <string name="delivery_name">Ali Alaa</string>
+    <string name="delivery_price_tag">Paid :</string>
+    <string name="paid_price_value">100 EGP</string>
+    <string name="submit">Submit</string>
 </resources>
